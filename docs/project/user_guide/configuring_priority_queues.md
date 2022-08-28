@@ -1,6 +1,6 @@
 # Configuring Priority Queues
 
-By default HTC-Grid comes configured with a single task queue implemented via SQS. However, HTC-Grid also supports task prioritization which is implemented suing multiple SQS queues. In such configuration each SQS queue corresponds to a specific priority. At runtime Agents attempt to pull tasks from the higher priority queues before checking queues containing lower priority.
+By default HTC-Grid comes configured with a single task queue implemented via SQS. However, HTC-Grid also supports task prioritization which is implemented using multiple SQS queues. In such configuration each SQS queue corresponds to a specific priority. At runtime Agents attempt to pull tasks from the higher priority queues before checking queues containing lower priority items.
 
 To enable multiple priorities the following 3 steps need to be configured prior to HTC-Grid deployment
 
@@ -31,4 +31,5 @@ To enable multiple priorities the following 3 steps need to be configured prior 
     "task_queue_service": "PrioritySQS",
     "task_queue_config": "{'priorities':3}",
     ```
-Set ''task_queue_service'' to **PrioritySQS** indicating that multiple priorities are used. Then, update ''task_queue_config'' to contain the appropriate number of priorities created in step 1.
+    
+3. Set ''task_queue_service'' to **PrioritySQS** indicating that multiple priorities are used. Then, update ''task_queue_config'' to contain the appropriate number of priorities created in step 1.
